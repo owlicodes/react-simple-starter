@@ -21,6 +21,4 @@ export type User = Entity<{
   username: string;
 }>;
 
-export type AuthResponse = {
-  user: User;
-};
+export type AuthResponse = User;

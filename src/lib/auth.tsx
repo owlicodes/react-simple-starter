@@ -11,13 +11,8 @@ import { AuthResponse, User } from "@/types/api";
 // these are not part of features as this is a module shared across features
 
 const getUser = async (): Promise<User | null> => {
-  try {
-    const response = await api.get("/users/me");
-    return response.data;
-  } catch (error) {
-    console.error("getUser:", error);
-    return null;
-  }
+  const response = await api.get("/users/me");
+  return response.data;
 };
 
 const logout = (): Promise<void> => {
@@ -49,12 +44,10 @@ const registerWithUsernameAndPassword = (
 const authConfig = {
   userFn: getUser,
   loginFn: async (data: LoginInput) => {
-    const response = await loginWithUsernameAndPassword(data);
-    return response.user;
+    return await loginWithUsernameAndPassword(data);
   },
   registerFn: async (data: RegisterInput) => {
-    const response = await registerWithUsernameAndPassword(data);
-    return response.user;
+    return await registerWithUsernameAndPassword(data);
   },
   logoutFn: logout,
 };

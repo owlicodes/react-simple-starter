@@ -7,7 +7,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen w-full">
       <header className="h-[50px] bg-blue-950 flex items-center justify-between text-white px-8">
-        <h1 className="font-semibold text-lg">Bulletproof React Mini</h1>
+        <h1 className="font-semibold text-lg">react-simple-starter</h1>
 
         <Button onClick={() => logout.mutate({})} variant="secondary">
           Logout
