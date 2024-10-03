@@ -1,8 +1,11 @@
+import AppProvider from "./app-provider";
+import { AppRouter } from "./app-router";
+
 const App = () => {
   return (
-    <div>
-      <h1>react-simple-starter</h1>
-    </div>
+    <AppProvider>
+      <AppRouter />
+    </AppProvider>
   );
 };
 
